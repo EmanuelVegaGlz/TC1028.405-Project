@@ -4,59 +4,59 @@
 
 subproceso (vistatarea)
 
-      escribir ("Estas son las actividades que tiene pendiente")
+            escribir ("Estas son las actividades que tiene pendiente")
+      
+            escribir (todaslastareas)
 
-      escribir (todaslastareas)
+            escribir ("¿Desea conocer que actividades tiene que entregar hoy?/
 
-      escribir ("¿Desea conocer que actividades tiene que entregar hoy?/
+            si escriba 1, no escriba 0")
 
-      si escriba 1, no escriba 0")
+            input int <- (ctphoy)
 
-      input int <- (ctphoy)
+            repetir mientras ctphoy ¡= (1 o 0)
 
-      repetir mientras ctphoy ¡= (1 o 0)
+            escribir ("Opcion no valida vuelva a intentarlo")
 
-      escribir ("Opcion no valida vuelva a intentarlo")
+            si ctphoy = (1)
 
-      si ctphoy = (1)
+            entonces escribir (los espacios del array en donde (fecha)= date actual)
 
-      entonces escribir (los espacios del array en donde (fecha)= date actual)
+            si no
 
-      si no
+            escribir ("¿Quiere conocer sus tareas atrasadas?/
+            
+            si escriba 1, no escriba 0")
 
-      escribir ("¿Quiere conocer sus tareas atrasadas?/
+            input int <-(ctpendientes)
 
-      si escriba 1, no escriba 0")
+            repetir mientras ctpendientes ¡= (1 o 0)
 
-      input int <-(ctpendientes)
+            escribir ("Opcion no valida vuelva a intentarlo")
 
-      repetir mientras ctpendientes ¡= (1 o 0)
+            si ctpendientes = 1
 
-      escribir ("Opcion no valida vuelva a intentarlo")
+            entonces escribir (los espacios del array en donde (fecha) > date actual)
 
-      si ctpendientes = 1
+            si no
 
-      entonces escribir (los espacios del array en donde (fecha) > date actual)
+            escribir ("¿Quieres añadir otra tarea/
 
-      si no
+            si escriba 1, no escriba 0?")
 
-      escribir ("¿Quieres añadir otra tarea/
+            input int <- (mastarea)
 
-      si escriba 1, no escriba 0?")
+            repetir mientras mastarea ¡= (1 o 0)
 
-      input int <- (mastarea)
+            escribir ("Opcion no valida vuelva a intentarlo")
 
-      repetir mientras mastarea ¡= (1 o 0)
+            si mastarea = 1
 
-      escribir ("Opcion no valida vuelva a intentarlo")
+            entonces ejecutar subproceso (agregartarea)
 
-      si mastarea = 1
+            si no
 
-      entonces ejecutar subproceso (agregartarea)
-
-      si no
-
-      escribir ("Actividades guardadas con exito, ¡Vuelva pronto!")
+            escribir ("Actividades guardadas con exito, ¡Vuelva pronto!")
 
 Fin subproceso
 
