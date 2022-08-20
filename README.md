@@ -2,7 +2,7 @@
 
 
 
-subproceso (vistatarea)
+    subproceso (vistatarea)
 
             escribir ("Estas son las actividades que tiene pendiente")
       
