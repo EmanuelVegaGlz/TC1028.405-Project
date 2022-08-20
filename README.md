@@ -123,4 +123,4 @@ E0 (Bienvenida)
       fin si
       
 
-EF escribir ("gracias por organizarte con nosotros")
+EF escribir ("¡Gracias por organizarte con nosotros!")
