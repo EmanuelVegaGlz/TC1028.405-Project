@@ -1,62 +1,74 @@
-# App de recordatorios
+# *App de recordatorios*
+
+####                                                                                                                                         **Nombre:** Emanuel Vega
+####                                                                                                                                             **ID:** A01710366
+
+## Contexto
+
+Recientemente muchos de nosotros hemos empezado una nueva etapa en nuestras vidas al entrar a primer semestre de la vida universitaria, por lo que como alumnos necesitamos de herramientas que nos puedan hacer más placentera esta experiencia así como facilitarnos la vida durante nuestra carrera profesional, por lo que tener una herramienta la cual nos pueda ayudar gestionar nuestros tiempos es algo de gran utilidad, al poder tener un control de las actividades que tenemos que realizar para no pasar por alto ninguna y tener un excelente desempeño académico.
+
+La manera en que funciona el algoritmo que ideé, es la siguiente; el usuario entra a la aplicación y de entrada además de la bienvenida tendrá un menú principal con dos opciones, ver las tareas pendientes o agregar una tarea, al seleccionar agregar tarea el programa le pedirá al usuario que ingrese una serie de parámetros para poder almacenar las tarea, datos tales como lo son la materia, una breve descripción de la actividad y la fecha. Posteriormente podrá visualizar las tareas que tiene con la opción de ver todas las tareas, las tareas del día o las tareas previas. Con la opción de después de ver las tareas añadir otra.
+
+La lógica del algoritmo es dividiendo las funciones por subprocesos para después invocarlos, de igual manera para las opciones hacia el usuario se ocupan condicionales y para el almacenamiento de tareas con sus respectivas características se hace uso de listas, para almacenar todas las tareas es una lista de la lista con las tareas y sus parámetros.
 
 
 
-    subproceso (vistatarea)
+### Pseudocódigo:
+subproceso (vistatarea)
 
-            escribir ("Estas son las actividades que tiene pendiente")
+        escribir ("Estas son las actividades que tiene pendiente")
       
-            escribir (todaslastareas)
+        escribir (todaslastareas)
 
-            escribir ("¿Desea conocer que actividades tiene que entregar hoy?/
+        escribir ("¿Desea conocer que actividades tiene que entregar hoy?/
 
-            si escriba 1, no escriba 0")
+        si escriba 1, no escriba 0")
 
-            input int <- (ctphoy)
+        input int <- (ctphoy)
 
-            repetir mientras ctphoy ¡= (1 o 0)
+        repetir mientras ctphoy ¡= (1 o 0)
 
-            escribir ("Opcion no valida vuelva a intentarlo")
+        escribir ("Opcion no valida vuelva a intentarlo")
 
-            si ctphoy = (1)
+        si ctphoy = (1)
 
-            entonces escribir (los espacios del array en donde (fecha)= date actual)
+        entonces escribir (los espacios del array en donde (fecha)= date actual)
 
-            si no
+        si no
 
-            escribir ("¿Quiere conocer sus tareas atrasadas?/
+        escribir ("¿Quiere conocer sus tareas atrasadas?/
             
-            si escriba 1, no escriba 0")
+        si escriba 1, no escriba 0")
 
-            input int <-(ctpendientes)
+        input int <-(ctpendientes)
 
-            repetir mientras ctpendientes ¡= (1 o 0)
+        repetir mientras ctpendientes ¡= (1 o 0)
 
-            escribir ("Opcion no valida vuelva a intentarlo")
+        escribir ("Opcion no valida vuelva a intentarlo")
 
-            si ctpendientes = 1
+        si ctpendientes = 1
 
-            entonces escribir (los espacios del array en donde (fecha) > date actual)
+        entonces escribir (los espacios del array en donde (fecha) > date actual)
 
-            si no
+        si no
 
-            escribir ("¿Quieres añadir otra tarea/
+        escribir ("¿Quieres añadir otra tarea/
 
-            si escriba 1, no escriba 0?")
+        si escriba 1, no escriba 0?")
 
-            input int <- (mastarea)
+        input int <- (mastarea)
 
-            repetir mientras mastarea ¡= (1 o 0)
+        repetir mientras mastarea ¡= (1 o 0)
 
-            escribir ("Opcion no valida vuelva a intentarlo")
+        escribir ("Opcion no valida vuelva a intentarlo")
 
-            si mastarea = 1
+        si mastarea = 1
 
-            entonces ejecutar subproceso (agregartarea)
+        entonces ejecutar subproceso (agregartarea)
 
-            si no
+        si no
 
-            escribir ("Actividades guardadas con exito, ¡Vuelva pronto!")
+        escribir ("Actividades guardadas con exito, ¡Vuelva pronto!")
 
 Fin subproceso
 
