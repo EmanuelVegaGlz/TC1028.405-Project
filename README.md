@@ -104,7 +104,7 @@ subproceso (agregartarea)
 
 E0 (Bienvenida)
 
-escribir ("Hola que gusto volver a vernos
+escribir ("Hola que gusto volver a vernos")
 
 escribir ("¿Deseas ver tus tarea o agrgar tareas?")
 
