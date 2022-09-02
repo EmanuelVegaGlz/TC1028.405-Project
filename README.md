@@ -14,113 +14,119 @@ La lógica del algoritmo es dividiendo las funciones por subprocesos para despu�
 
 
 ### Pseudocódigo:
-subproceso (vistatarea)
+subproceso (vistatarea):
 
-        escribir ("Estas son las actividades que tiene pendiente")
-      
-        escribir (todaslastareas)
+        escribir ("Estas son las actividades que tiene pendiente", todaslastareas)
 
-        escribir ("¿Desea conocer que actividades tiene que entregar hoy?/
+        escribir ("¿Desea conocer que actividades tiene que entregar hoy? si escriba 1, no escriba 0")
 
-        si escriba 1, no escriba 0")
+        input int <- conocer_tareas_hoy
 
-        input int <- (ctphoy)
+        mientras conocer_tareas_hoy ¡= (1 o 0): 
 
-        repetir mientras ctphoy ¡= (1 o 0)
+            Repetir:
 
-        escribir ("Opcion no valida vuelva a intentarlo")
+                escribir ("Opcion no valida vuelva a intentarlo")
 
-        si ctphoy = (1)
+        si conocer_tareas_hoy == (1):
 
-        entonces escribir (los espacios del array en donde (fecha)= date actual)
+            entonces escribir (los espacios del array en donde (fecha) == date actual)
+
+        si no:
+
+            escribir(de acuerdo)
+
+        fin si        
+
+
+        escribir ("¿Quiere conocer sus tareas atrasadas? si escriba 1, no escriba 0")
+
+        input int <- conocer_pendientes ("Escribe tu opcion: ")
+
+        si conocer_pendientes ¡= (1 o 0):
+
+            entonces repetir:
+
+                escribir ("Opcion no valida vuelva a intentarlo")
+
+            de lo contrario si conocer_pendientes == 1:
+
+                entonces escribir (los espacios del array en donde (fecha) > date actual)
+
+        fin si
+
+
+        escribir ("¿Quieres añadir otra tarea si escriba 1, no escriba 0?")
+
+        input int <- mastarea ("Escribe tu opcion: ")
+
+        mientras mastarea ¡= (1 o 0):
+
+            repetir:
+
+                escribir ("Opcion no valida vuelva a intentarlo")
+
+        si mastarea = 1:
+
+            entonces ejecutar subproceso (agregartarea)
 
         si no
 
-        escribir ("¿Quiere conocer sus tareas atrasadas?/
-            
-        si escriba 1, no escriba 0")
+                escribir ("Actividades guardadas con exito, ¡Vuelva pronto!")
 
-        input int <-(ctpendientes)
-
-        repetir mientras ctpendientes ¡= (1 o 0)
-
-        escribir ("Opcion no valida vuelva a intentarlo")
-
-        si ctpendientes = 1
-
-        entonces escribir (los espacios del array en donde (fecha) > date actual)
-
-        si no
-
-        escribir ("¿Quieres añadir otra tarea/
-
-        si escriba 1, no escriba 0?")
-
-        input int <- (mastarea)
-
-        repetir mientras mastarea ¡= (1 o 0)
-
-        escribir ("Opcion no valida vuelva a intentarlo")
-
-        si mastarea = 1
-
-        entonces ejecutar subproceso (agregartarea)
-
-        si no
-
-        escribir ("Actividades guardadas con exito, ¡Vuelva pronto!")
-
-Fin subproceso
+        Fin subproceso
 
 
 
 subproceso (agregartarea)
 
-     escribir ("Especifique la materia de la tarea")
+        escribir ("Especifique la materia de la tarea")
 
-     input string <- (mat)
+        input string <- (mat)
 
-     escribir ("Escriba una breve descripcion de su tarea")
+        escribir ("Escriba una breve descripcion de su tarea")
 
-     input string <- (act)
+        input string <- (act)
 
-     escribir ("¿Cuando se entrega su tarea?")
+        escribir ("¿Cuando se entrega su tarea?")
 
-     input date <- (fecha)
+        input date <- (fecha)
 
-     Crear array (actividades) ["Materia: " mat, "Tarea: " act, "Fecha: " fecha]
+        Crear array (actividades) ["Materia: " mat, "Tarea: " act, "Fecha: " fecha]
 
-     Guardar array (actividades)
+        Guardar array (actividades)
 
-     Crear array (todaslastareas) [(actividades) 100]
+        Crear array (todaslastareas) [(actividades) 100]
 
-     Fin subproceso
+        Fin subproceso
 
 
 
 E0 (Bienvenida)
 
-      escribir ("Hola que gusto volver a vernos/
+escribir ("Hola que gusto volver a vernos
 
-      ¿Deseas ver tus tarea o agrgar tareas?/
+escribir ("¿Deseas ver tus tarea o agrgar tareas?")
 
-      Para ver tus tareas digita 1 para agregar digita 2")
+escribir ("Para ver tus tareas digita 1 para agregar digita 2")
 
-      input int <- (seleccion)
+input int <- seleccion
 
-      mientras seleccion != 1 o 2
+mientras seleccion != 1 o 2:
 
-      escribir ("Opcion invalida, por favor ingrese 1 o 2")
+    repetir:
 
-      si seleccion = 1
+        escribir ("Opcion invalida, por favor ingrese 1 o 2")
 
-      entonces ejecutar subproceso (vistatareas)
+si seleccion == 1
 
-      si no seleccion = 2
+    entonces ejecutar subproceso (vistatareas)
 
-      ejecutar subproceso (agregartarea)
+si no seleccion == 2
 
-      fin si
+    ejecutar subproceso (agregartarea)
+
+fin si
       
 
 EF escribir ("¡Gracias por organizarte con nosotros!")
