@@ -13,13 +13,14 @@ def vista_tarea (tarea):
 
 #Esta es la funcion para visualizar las tareas programadas para hoy
 def conocer_tareas_hoy (tarea):
-      pendientes = tarea ([date] == datetime)  #No estoy seguro si es la forma correcta para comparar la fecha de la lista/ 
+      pendientes = tarea ([date_dia] == datetime)  #No estoy seguro si es la forma correcta para comparar la fecha de la lista/ 
       return pendientes                        #con la fecha del dia para poder determinar las tareas para hoy, pero esa es la idea.
 
 #Funcion para conocer las tareas pendientes
 def conocer_tareas_pendientes (tarea):
-      pendientes = tarea ([date] < datetime)
+      pendientes = tarea ([date_dia] < datetime)
       return pendientes
+
       
 #Aqui inicia la ejecucion del codigo   
 print ("Hola que gusto volver a vernos ¿Que deseas hacer?")
@@ -31,11 +32,20 @@ print ("Por el contrario si lo que quiere es conocer sus tareas pasadas seleccio
 seleccion_1 = int (input ("Escriba la opcion deseada: "))
 
 if seleccion_1 == 1:
-      materia = str (input("Especifique la materia de la tarea: "))
-      descripcion = str (input("Escriba una breve descripcion de su tarea: "))
-      date = datetime(input ("¿Cuando lo entrega?: "))
-      tarea = [materia, descripcion,date]
-      seleccion_2 = int(input(""))
+      seleccion_2 = int(input("Deseas agregar una tarea? Si=1, No=0"))
+      while seleccion_2 == 1:
+            materia = str (input("Especifique la materia de la tarea: "))
+            descripcion = str (input("Escriba una breve descripcion de su tarea: "))
+            date_dia = int(input ("¿Que dia lo entrega?: "))
+            date_mes = int(input ("¿En que mes lo entrega?: "))
+            date_año = int(input ("¿De que año?: "))
+            tarea = [materia, descripcion, date_dia, date_mes, date_año]
+            print ("Tarea creada con exito")
+            seleccion_2 = int(input("Deseas agregar otra tarea? Si=1, No=0"))
+      if seleccion_2 == 0:
+            print ("De acuerdo vuelva pronto")
+      else:
+            print("opcion invalida")
 
 if seleccion_1 == 2:
       ver = vista_tarea(tarea)  
