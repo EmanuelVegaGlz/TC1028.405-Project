@@ -35,7 +35,7 @@ if seleccion_1 == 1:
       descripcion = str (input("Escriba una breve descripcion de su tarea: "))
       date = datetime(input ("¿Cuando lo entrega?: "))
       tarea = [materia, descripcion,date]
-      contador_a = contador_a + 1
+      seleccion_2 = int(input(""))
 
 if seleccion_1 == 2:
       ver = vista_tarea(tarea)  
@@ -46,3 +46,5 @@ if seleccion_1 == 3:
 
 if seleccion_1 == 4:
       print ("Sus tareas pendientes son: ", conocer_tareas_pendientes(tarea))
+else:
+      print("Opcion invalida")
