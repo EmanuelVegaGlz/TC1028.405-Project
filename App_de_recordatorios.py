@@ -1,6 +1,10 @@
 # App de recordatorios
 
-from datetime import datetime #Importe un modulo para hacer uso de fechas
+#Importé un modulo para hacer uso de fechas
+
+from datetime import date
+from datetime import datetime
+
 contador_a = int(0)           #Contador para llevar un recuento de las tareas
 
 
@@ -13,12 +17,14 @@ def vista_tarea (tarea):
 
 #Esta es la funcion para visualizar las tareas programadas para hoy
 def conocer_tareas_hoy (tarea):
-      pendientes = tarea ([date_dia] == datetime)  #No estoy seguro si es la forma correcta para comparar la fecha de la lista/ 
-      return pendientes                        #con la fecha del dia para poder determinar las tareas para hoy, pero esa es la idea.
+      today = date.today()
+      pendientes = tarea ([date_dia] == today)   
+      return pendientes                            
 
 #Funcion para conocer las tareas pendientes
 def conocer_tareas_pendientes (tarea):
-      pendientes = tarea ([date_dia] < datetime)
+      today = date.today()
+      pendientes = tarea ([date_dia] < today)
       return pendientes
 
       
@@ -58,3 +64,12 @@ if seleccion_1 == 4:
       print ("Sus tareas pendientes son: ", conocer_tareas_pendientes(tarea))
 else:
       print("Opcion invalida")
+
+"""
+Hoy en la clase ya aprendi a usar listas, 
+tambien a comparar los valores de la lista,
+ademas de utilizar ciclos for, me hubiera
+gustado ponerlos en este avance pero por las
+tareas de otras materias no me dio tiempo. :(
+
+"""
