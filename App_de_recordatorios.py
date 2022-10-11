@@ -87,11 +87,11 @@ def imprime_mensaje(lista):
             print(i)
 
 #Funcion para validar fecha
-def valida(min,max,date):
+def valida(min,max,date,tipo):
       while date < min or date > max:
-            print("Dia ", date, " inexistente, intente de nuevo")
+            print(tipo, date, " inexistente, intente de nuevo")
             date = int(input("Introduzca un valor real: "))
-
+      return date
 """
 ========  Aqui inicia la ejecucion del codigo =================================
 """
@@ -112,9 +112,10 @@ if seleccion_1 == 1:
             descripcion = str(input("Escriba una breve descripcion de su tarea: "))
             dia = int(input("¿Que dia lo entrega? (Solo numeros): "))
             #Valida
-            while dia < 1 or dia > 31:
-                  print("Dia ", dia, " inexistente, intente de nuevo")
-                  dia = int(input("¿Que dia lo entrega?"))
+            valida(1,31,dia,"Dia")
+            #while dia < 1 or dia > 31:
+            #      print("Dia ", dia, " inexistente, intente de nuevo")
+            #      dia = int(input("¿Que dia lo entrega?"))
             mes = int(input("¿En que mes lo entrega? (Solo numeros): "))
             #Valida
             while mes < 1 or mes > 12:
