@@ -24,12 +24,12 @@ def conocer_tareas_hoy(matriz):
       dia_actual = today.day
       mes_actual = today.month
       año_actual = today.year
-
+      t_hoy = []
       for i in matriz:
-            for j in i[2]:
-                  for k in j:
-                        if j[0] == año_actual and j[1] == mes_actual and j[2] == dia_actual:
-                              print(i)  
+            if i[3] == dia_actual and i[5] == mes_actual\
+                  and i[7] == año_actual:
+                  t_hoy.append(i)  
+      return t_hoy
 
                      
 #Funcion para conocer las tareas pasadas
@@ -86,6 +86,7 @@ while seleccion_1 < 1 or seleccion_1 > 4:
 if seleccion_1 == 1:
       seleccion_2 = int(input("Deseas agregar una tarea? Si = 1, No != 1: "))
       mat = []
+      sl = str('/')
       while seleccion_2 == 1:
             materia = str(input("Especifique la materia de la tarea: "))
             descripcion = str(input("Escriba una breve descripcion de su tarea: "))
@@ -101,11 +102,10 @@ if seleccion_1 == 1:
             while año < 1:
                   print("Año ", año, " inexistente, intente de nuevo")
                   año = int(input("¿De que año?: "))
-            fecha = (año,mes,dia)
-            tarea = [materia,descripcion,fecha]
+            tarea = [materia,descripcion, 'Fecha: ',dia,sl,mes,sl,año]
             mat.append(tarea)
             print("Tarea creada con exito") 
-            seleccion_2 = int(input("Deseas agregar una tarea? Si=1, No=0: "))
+            seleccion_2 = int(input("Deseas agregar otra tarea? Si=1, No=0: "))
       
       rango_bienvenida = bienvenida()
       for i in range(2,5):
@@ -121,11 +121,10 @@ if seleccion_1 == 2:
 
 if seleccion_1 == 3:
       print("Sus tareas programadas para hoy son: ")
-      t_hoy = conocer_tareas_hoy(mat)
-      
+      print(conocer_tareas_hoy(mat))
 
-      rango_bienvenida = bienvenida()
-      print(rango_bienvenida(4))
+      msj = bienvenida()
+      print(msj[4])
       seleccion_1 = int(input("Escriba la opcion deseada: "))
 
 if seleccion_1 == 4:
