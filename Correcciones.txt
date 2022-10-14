@@ -1,0 +1,85 @@
+Sub-Competencia: 
+
+Error original:
+
+Cambio realizado:
+
+Líneas de código donde se ve la corrección:
+
+
+============================ Caso 1 ========================================
+
+
+Sub-Competencia: 
+	componente: usa la forma más a apropiada al problema para guardar los datos (listas, variable, tipo de dato, etc...) (avance 6 y avance 7)
+
+Error original: En avances pasados la forma en que creaba las listas y las matrices era erronea, tenia problemas de sintaxis
+                de igual forma al comparar las fechas de las tareas lo hacia de una forma inadecuada
+
+	def conocer_tareas_hoy (tarea):
+      pendientes = tarea ([date] == datetime)  #No estoy seguro si es la forma correcta para comparar la fecha de la lista/ 
+      pendientes = tarea ([date_dia] == datetime)  #No estoy seguro si es la forma correcta para comparar la fecha de la lista/ 
+      return pendientes                        #con la fecha del dia para poder determinar las tareas para hoy, pero esa es la idea.
+
+#Funcion para conocer las tareas pendientes
+def conocer_tareas_pendientes (tarea):
+      pendientes = tarea ([date] < datetime)
+      pendientes = tarea ([date_dia] < datetime)
+      return pendientes 
+
+Cambio realizado: A la hora de la entrega utilizo la sintaxis adecuada y tengo el 1 en la Sub-Competencia, al igual que una
+                 libreria datetime para manejar fechas
+
+
+	def conocer_tareas_hoy(matriz):
+
+      """
+      (Operadores, funciones, listas, listas anidadas, ciclos y condicionales)
+      recibe: matriz lista anidada
+      Compara las fechas de una lista de tareas con la fecha de la biblioteca
+      datetime, si son iguales se guardan en otra lista
+      Devuelve: Una nueva lista anidada con la recopilacion de las fechas 
+      que cumplen la condicion
+      """  
+
+      today = date.today()
+      dia_actual = today.day
+      mes_actual = today.month
+      año_actual = today.year
+      t_hoy = []
+      vacio = ["¡No hay tareas para hoy!"]
+      for i in matriz:
+            if i[3] == dia_actual and i[5] == mes_actual\
+                  and i[7] == año_actual:
+                  t_hoy.append(i)  
+      if t_hoy == []:
+            return vacio
+      else:
+            return t_hoy
+
+    if seleccion_1 == 1:
+      materia = str (input("Especifique la materia de la tarea: "))
+      descripcion = str (input("Escriba una breve descripcion de su tarea: "))
+      date = datetime(input ("¿Cuando lo entrega?: "))
+      tarea = [materia, descripcion,date]
+      seleccion_2 = int(input(""))
+
+#Agregar tareas
+      if seleccion_1 == 1:
+            seleccion_2 = int(input("Deseas agregar una tarea? Si = 1, No != 1: "))
+            
+            while seleccion_2 == 1:
+                  materia = str(input("Especifique la materia de la tarea: "))
+                  descripcion = str(input("Escriba una breve descripcion de su tarea: "))
+                  dia = int(input("¿Que dia lo entrega? (Solo numeros): "))
+                  dia = valida(1,31,dia,"Dia")
+                  mes = int(input("¿En que mes lo entrega? (Solo numeros): "))
+                  mes = valida(1,12,mes,"Mes")
+                  año = int(input("¿De que año? (Solo numeros): "))
+                  año = valida(2000,3000,año,"Año (aaaa)")
+                  tarea = [materia,descripcion, 'Fecha: ',dia,'/',mes,'/',año]
+                  mat.append(tarea)
+                  print("Tarea creada con exito") 
+                  print("")
+                  seleccion_2 = int(input("Deseas agregar otra tarea? Si=1, No=0: "))
+Líneas de código donde se ve la corrección: 20 a 100  y de la 187 a la 204
