@@ -12,7 +12,6 @@ busca la fecha dentro de la matriz.
 # Bibliotecas
 
 from datetime import date
-from datetime import datetime
 
 """
 ================== funciones principales =======================================
@@ -62,11 +61,11 @@ def conocer_tareas_pasadas(matriz):
       t_pasadas = []
       vacio = ["¡No hay tareas pendientes!"]
       for i in matriz:
-            if i[3] > dia_actual and i[5] == mes_actual or i[7] == año_actual:
+            if i[3] > dia_actual and i[5] == mes_actual and i[7] == año_actual:
                   t_pasadas.append(i)
-            if i[3] == dia_actual and i[5] > mes_actual or i[7] == año_actual:
+            if i[3] == dia_actual and i[5] > mes_actual and i[7] == año_actual:
                   t_pasadas.append(i)
-            if i[3] == dia_actual and i[5] == mes_actual or i[7] > año_actual:
+            if i[3] == dia_actual and i[5] == mes_actual and i[7] > año_actual:
                   t_pasadas.append(i)
       if t_pasadas == []:
             return vacio
@@ -197,7 +196,7 @@ while seleccion_1 == 1 or 2 or 3 or 4 or 5:
                   mes = int(input("¿En que mes lo entrega? (Solo numeros): "))
                   mes = valida(1,12,mes,"Mes")
                   año = int(input("¿De que año? (Solo numeros): "))
-                  año = valida(2000,3000,año,"Año")
+                  año = valida(2000,3000,año,"Año (aaaa)")
                   tarea = [materia,descripcion, 'Fecha: ',dia,'/',mes,'/',año]
                   mat.append(tarea)
                   print("Tarea creada con exito") 
