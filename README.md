@@ -130,3 +130,13 @@ fin si
       
 
 EF escribir ("¡Gracias por organizarte con nosotros!")
+
+### Instrucciones
+
+Descargar el archivo y correr en terminal con:
+
+    python App_de_recordatorios.py
+
+o abrir en Thonny y dar boton de play.
+
+Seleccionar las opciones del menu e ingresar los datos de tus tareas, no puedas acceder a todas las funcionalidades si antes no ingresas tus tareas, el programa tiene instrucciones y usa biblioteca date de dateime. 
