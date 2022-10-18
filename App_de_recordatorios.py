@@ -77,9 +77,9 @@ def conocer_tareas_mañana(matriz):
       """
       (Operadores, funciones, listas, listas anidadas, ciclos y condicionales)
       Recibe: matriz lista anidada
-      Compara las fechas de una lista anidada de tareas con la fecha de hoy de la 
-      biblioteca datetime buscando que la fecha de la lista sea un dia despues
-      a la actual
+      Compara las fechas de una lista anidada de tareas con la fecha de hoy con
+      la biblioteca datetime buscando que la fecha de la lista sea un dia 
+      despues a la actual
       Devuelve: Una nueva lista anidada con la recopilacion de las fechas 
       que cumplen la condicion
       """ 
@@ -91,7 +91,7 @@ def conocer_tareas_mañana(matriz):
       t_mañana = []
       vacio = ["¡No hay tareas para mañana!"]
       for i in matriz:
-            if i[3] == dia_actual+1 and i[5] == mes_actual\
+            if i[3] == dia_actual + 1 and i[5] == mes_actual\
                   and i[7] == año_actual:
                   t_mañana.append(i)
       if t_mañana == []:
@@ -165,11 +165,31 @@ def valida(min,max,date,tipo):
             date = int(input("Introduzca un valor real: "))
       return date
 
+def elimina_imprime_mensaje(seleccion):
+
+      """
+      (Operadores, funciones, listas, listas anidadas)
+      recibe: seleccion que es la opcion del menu que el usuario eligio
+      Elimina el mensaje del menu en el que se encuentra, para luego desplegar
+      al usuario las otras funciones
+      Devuelve: La funcion no tiene return
+      """  
+      
+      mensaje = bienvenida()
+      mensaje.pop(0)
+      mensaje.pop(seleccion - 1)
+      imprime_mensaje(mensaje)
 """
 ========  Aqui inicia la ejecucion del codigo ==================================
 """
 #Se inicializa una matriz vacia para guardar la listas de tareas
 mat = []
+
+today = date.today()
+Dia_de_hoy = today.day
+Mes_de_hoy = today.month
+Año_de_hoy = today.year
+
 welcome = bienvenida()
 welcome.pop(6)
 imprime_mensaje(welcome)
@@ -182,7 +202,7 @@ while seleccion_1 < 1 or seleccion_1 > 5:
       print("")
 
 #Ciclo para ir a cualquier opcion dentro del menu y poder cerrar la app
-while seleccion_1 == 1 or 2 or 3 or 4 or 5:
+while seleccion_1 > 0 and seleccion_1 < 6:
 
       #Agregar tareas
       if seleccion_1 == 1:
@@ -196,7 +216,7 @@ while seleccion_1 == 1 or 2 or 3 or 4 or 5:
                   mes = int(input("¿En que mes lo entrega? (Solo numeros): "))
                   mes = valida(1,12,mes,"Mes")
                   año = int(input("¿De que año? (Solo numeros): "))
-                  año = valida(2000,3000,año,"Año (aaaa)")
+                  año = valida(Año_de_hoy,3000,año,"Año (aaaa)")
                   tarea = [materia,descripcion, 'Fecha: ',dia,'/',mes,'/',año]
                   mat.append(tarea)
                   print("Tarea creada con exito") 
@@ -205,10 +225,7 @@ while seleccion_1 == 1 or 2 or 3 or 4 or 5:
             
             #Opciones del menu, sin la opcion actual
             print("")
-            mensaje_1 = bienvenida()
-            mensaje_1.pop(0)
-            mensaje_1.pop(0)
-            imprime_mensaje(mensaje_1)
+            elimina_imprime_mensaje(seleccion_1)
             seleccion_1 = int(input("Escriba la opcion deseada: "))
       
       #Mostrar tareas
@@ -220,10 +237,7 @@ while seleccion_1 == 1 or 2 or 3 or 4 or 5:
             
             #Opciones del menu, sin la opcion actual
             print("")
-            mensaje_1 = bienvenida()
-            mensaje_1.pop(0)
-            mensaje_1.pop(1)
-            imprime_mensaje(mensaje_1)
+            elimina_imprime_mensaje(seleccion_1)
             seleccion_1 = int(input("Escriba la opcion deseada: "))
 
       #Mostrar tareas de hoy
@@ -236,10 +250,7 @@ while seleccion_1 == 1 or 2 or 3 or 4 or 5:
             
             #Opciones del menu, sin la opcion actual
             print("")
-            mensaje_1 = bienvenida()
-            mensaje_1.pop(0)
-            mensaje_1.pop(2)
-            imprime_mensaje(mensaje_1)
+            elimina_imprime_mensaje(seleccion_1)
             seleccion_1 = int(input("Escriba la opcion deseada: "))
 
       #Mostrar tareas pasadas
@@ -252,10 +263,7 @@ while seleccion_1 == 1 or 2 or 3 or 4 or 5:
             
             #Opciones del menu, sin la opcion actual
             print("")
-            mensaje_1 = bienvenida()
-            mensaje_1.pop(0)
-            mensaje_1.pop(3)
-            imprime_mensaje(mensaje_1)
+            elimina_imprime_mensaje(seleccion_1)
             seleccion_1 = int(input("Escriba la opcion deseada: "))
       
       #Mostrar tareas de mañana
@@ -268,10 +276,7 @@ while seleccion_1 == 1 or 2 or 3 or 4 or 5:
             
             #Opciones del menu, sin la opcion actual
             print("")
-            mensaje_1 = bienvenida()
-            mensaje_1.pop(0)
-            mensaje_1.pop(4)
-            imprime_mensaje(mensaje_1)
+            elimina_imprime_mensaje(seleccion_1)
             seleccion_1 = int(input("Escriba la opcion deseada: "))
 
 print("¡Vuelva pronto!")
