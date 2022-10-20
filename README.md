@@ -142,7 +142,7 @@ fin si
 
 EF escribir ("¡Gracias por organizarte con nosotros!")
 
-### Instrucciones
+## Instrucciones
 
 Descargar el archivo y correr en terminal con:
 
@@ -150,4 +150,11 @@ Descargar el archivo y correr en terminal con:
 
 o abrir en Thonny y dar boton de play.
 
-Seleccionar las opciones del menu e ingresar los datos de tus tareas, no puedas acceder a todas las funcionalidades si antes no ingresas tus tareas, el programa tiene instrucciones y usa biblioteca date de dateime. 
+
+Leer los mensajes que se despliegan en el programa y seleccionar las opciones del menú e ingresar los datos de tus tareas, no puedas acceder a todas las funcionalidades si antes no ingresas tus tareas, el programa tiene instrucciones y usa biblioteca date de dateime y os.
+
+**Recomendaciones para un funcionamiento optimo:**
+
+Procura agregar más de 5 tareas, al menos una que sea para el día actual y otra para mañana.
+De igual manera el programa crea el archivo "tareas.txt" en la carpeta en la que se encuentre el código, por lo que se sugiere no cambies de ubicación el archivo, ya que el programa creara otro y se perderán las tareas que generaste.
+
