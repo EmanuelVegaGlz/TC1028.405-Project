@@ -119,7 +119,8 @@ def bienvenida():
       d = "Desea visualizar sus tareas que tienes programadas para hoy digite 3"
       e = "Si lo que quiere es conocer sus tareas pasadas seleccione 4"
       f = "Ver las tareas de mañana ingrese 5"
-      g = "Para cerrar la app ingrese cualquier otro número"
+      g = "Ver su historial (Tareas agregadas en otras ocaciones) opcion 6"
+      h = "Para cerrar la app ingrese cualquier otro número"
       mensaje = [
             a,
             b,
@@ -127,7 +128,8 @@ def bienvenida():
             d,
             e,
             f,
-            g     
+            g,
+            h    
       ]
       return mensaje
 
@@ -179,9 +181,11 @@ def elimina_imprime_mensaje(seleccion):
       mensaje.pop(0)
       mensaje.pop(seleccion - 1)
       imprime_mensaje(mensaje)
+
 """
 ========  Aqui inicia la ejecucion del codigo ==================================
 """
+
 #Se inicializa una matriz vacia para guardar la listas de tareas
 mat = []
 
@@ -191,18 +195,18 @@ Mes_de_hoy = today.month
 Año_de_hoy = today.year
 
 welcome = bienvenida()
-welcome.pop(6)
+welcome.pop(7)
 imprime_mensaje(welcome)
 seleccion_1 = int(input("Escriba la opcion deseada (Solo numeros): "))
 
 #Ciclo para validar que al iniciar el menu se seleccione una opcion valida
-while seleccion_1 < 1 or seleccion_1 > 5:
+while seleccion_1 < 1 or seleccion_1 > 6:
       print("Opcion inexistente, vuelve a intentarlo")
       seleccion_1 = int(input("Escriba la opcion deseada: "))
       print("")
 
 #Ciclo para ir a cualquier opcion dentro del menu y poder cerrar la app
-while seleccion_1 > 0 and seleccion_1 < 6:
+while seleccion_1 > 0 and seleccion_1 < 7:
 
       #Agregar tareas
       if seleccion_1 == 1:
@@ -217,8 +221,16 @@ while seleccion_1 > 0 and seleccion_1 < 6:
                   mes = valida(1,12,mes,"Mes")
                   año = int(input("¿De que año? (Solo numeros): "))
                   año = valida(Año_de_hoy,3000,año,"Año (aaaa)")
+
                   tarea = [materia,descripcion, 'Fecha: ',dia,'/',mes,'/',año]
                   mat.append(tarea)
+
+                  tarea_hist = materia + " " + descripcion + " " + 'Fecha: '\
+                        + str(dia) + '/' + str(mes) + '/' + str(año) + "\n"
+                  guardar_hist = open("tareas.txt", "a")
+                  guardar_hist.write(tarea_hist)
+                  guardar_hist.close()
+                  
                   print("Tarea creada con exito") 
                   print("")
                   seleccion_2 = int(input("Deseas agregar otra tarea? Si=1, No=0: "))
@@ -274,6 +286,17 @@ while seleccion_1 > 0 and seleccion_1 < 6:
                   print("Sus tareas para mañana son: ")
                   imprime_mensaje(conocer_tareas_mañana(mat))
             
+            #Opciones del menu, sin la opcion actual
+            print("")
+            elimina_imprime_mensaje(seleccion_1)
+            seleccion_1 = int(input("Escriba la opcion deseada: "))
+      
+      if seleccion_1 == 6:
+            leer = open("tareas.txt", "r")
+            for x in leer:
+                  print(x)
+            leer.close()
+
             #Opciones del menu, sin la opcion actual
             print("")
             elimina_imprime_mensaje(seleccion_1)
