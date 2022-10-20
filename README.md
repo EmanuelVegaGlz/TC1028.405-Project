@@ -25,122 +25,69 @@ La manera en que funciona el algoritmo que ideé, es la siguiente; el programa c
 
 
 ### Pseudocódigo:
-subproceso (vistatarea):
+        subproceso(tareas_hoy):
+                leer (lista_de_tareas)
+                si fecha_tareas == fecha_actual:
+                    escribir(tareas)
 
-        escribir ("Estas son las actividades que tiene pendiente", todaslastareas)
+        subproceso(tareas_mañana):
+                leer (lista_de_tareas)
+                si fecha_tareas == fecha_actual + 1:
+                    escribir(tareas)
 
-        escribir ("¿Desea conocer que actividades tiene que entregar hoy? si escriba 1, no escriba 0")
+        subproceso(tareas_pasadas):
+                leer (lista_de_tareas)
+                si fecha_tareas < fecha_actual:
+                    escribir(tareas)
 
-        input int <- conocer_tareas_hoy
+        escribir("Hola que gusto volver a vernos ¿Que deseas hacer?")
+        escribir("Si desea añadir una tarea ingrese 1")
+        escribir("Para ver sus tareas ingresa 2")
+        escribir("Desea visualizar sus tareas que tienes programadas para hoy digite 3")
+        escribir("Si lo que quiere es conocer sus tareas pasadas seleccione 4")
+        escribir("Ver las tareas de mañana ingrese 5")
+        escribir("Ver su historial (Tareas agregadas en otras ocaciones) opcion 6")
 
-        mientras conocer_tareas_hoy ¡= (1 o 0): 
+        input int <- seleccion
 
-            Repetir:
+        mientras seleccion > 0 y seleccion < 7:
 
-                escribir ("Opcion no valida vuelva a intentarlo")
+        Repetir:
 
-        si conocer_tareas_hoy == (1):
+            si seleccion == (1):
+                input str <- materia
+                input str <- descripcion
+                input int <- fecha
+                tarea <- [materia,descripcion,fecha]
+                abrir tareas.txt
+                tareas.txt <- lista_de_tareas
+                cerrar tareas.txt
+                input int <- seleccion
 
-            entonces escribir (los espacios del array en donde (fecha) == date actual)
+            si seleccion == (2):
+                entonces escribir (lista_de_tareas)
+                input int <- seleccion
 
-        si no:
+            si seleccion == (3):
+                entonces ejecutar subproceso (tareas_hoy)
+                input int <- seleccion
 
-            escribir(de acuerdo)
+            si seleccion == (4):
+                entonces ejecutar subproceso (tareas_pasadas)
+                input int <- seleccion
 
-        fin si        
+            si seleccion == (5):
+                entonces ejecutar subproceso (tareas_mañana)
+                input int <- seleccion
 
+            si seleccion == (6):
+                entonces abrir tareas.txt
+                escribir(tareas.txt)
+                cerrar tareas.txt
 
-        escribir ("¿Quiere conocer sus tareas atrasadas? si escriba 1, no escriba 0")
+            fin si
 
-        input int <- conocer_pendientes ("Escribe tu opcion: ")
-
-        si conocer_pendientes ¡= (1 o 0):
-
-            entonces repetir:
-
-                escribir ("Opcion no valida vuelva a intentarlo")
-
-            de lo contrario si conocer_pendientes == 1:
-
-                entonces escribir (los espacios del array en donde (fecha) > date actual)
-
-        fin si
-
-
-        escribir ("¿Quieres añadir otra tarea si escriba 1, no escriba 0?")
-
-        input int <- mastarea ("Escribe tu opcion: ")
-
-        mientras mastarea ¡= (1 o 0):
-
-            repetir:
-
-                escribir ("Opcion no valida vuelva a intentarlo")
-
-        si mastarea = 1:
-
-            entonces ejecutar subproceso (agregartarea)
-
-        si no
-
-                escribir ("Actividades guardadas con exito, ¡Vuelva pronto!")
-
-        Fin subproceso
-
-
-
-subproceso (agregartarea)
-
-        escribir ("Especifique la materia de la tarea")
-
-        input string <- (mat)
-
-        escribir ("Escriba una breve descripcion de su tarea")
-
-        input string <- (act)
-
-        escribir ("¿Cuando se entrega su tarea?")
-
-        input date <- (fecha)
-
-        Crear array (actividades) ["Materia: " mat, "Tarea: " act, "Fecha: " fecha]
-
-        Guardar array (actividades)
-
-        Crear array (todaslastareas) [(actividades) 100]
-
-        Fin subproceso
-
-
-
-E0 (Bienvenida)
-
-escribir ("Hola que gusto volver a vernos")
-
-escribir ("¿Deseas ver tus tarea o agrgar tareas?")
-
-escribir ("Para ver tus tareas digita 1 para agregar digita 2")
-
-input int <- seleccion
-
-mientras seleccion != 1 o 2:
-
-    repetir:
-
-        escribir ("Opcion invalida, por favor ingrese 1 o 2")
-
-si seleccion == 1
-
-    entonces ejecutar subproceso (vistatareas)
-
-si no seleccion == 2
-
-    ejecutar subproceso (agregartarea)
-
-fin si
-      
-
-EF escribir ("¡Gracias por organizarte con nosotros!")
+        escribir("¡Vuelva pronto!")
 
 ## Instrucciones
 
