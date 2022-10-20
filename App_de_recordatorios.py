@@ -64,9 +64,9 @@ def conocer_tareas_pasadas(matriz):
       for i in matriz:
             if i[3] > dia_actual and i[5] == mes_actual and i[7] == año_actual:
                   t_pasadas.append(i)
-            if i[3] == dia_actual and i[5] > mes_actual and i[7] == año_actual:
+            elif i[3] == dia_actual and i[5] > mes_actual and i[7] == año_actual:
                   t_pasadas.append(i)
-            if i[3] == dia_actual and i[5] == mes_actual and i[7] > año_actual:
+            elif i[3] == dia_actual and i[5] == mes_actual and i[7] > año_actual:
                   t_pasadas.append(i)
       if t_pasadas == []:
             return vacio
