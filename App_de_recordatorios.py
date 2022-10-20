@@ -12,6 +12,7 @@ busca la fecha dentro de la matriz.
 # Bibliotecas
 
 from datetime import date
+import os
 
 """
 ================== funciones principales =======================================
@@ -185,6 +186,13 @@ def elimina_imprime_mensaje(seleccion):
 """
 ========  Aqui inicia la ejecucion del codigo ==================================
 """
+#Crear un archivo para guardar el historial
+if os.path.exists("tareas.txt"):
+      archivo = True
+else:
+      f = open("tareas.txt", "x")
+      f.close()
+
 
 #Se inicializa una matriz vacia para guardar la listas de tareas
 mat = []
