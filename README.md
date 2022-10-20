@@ -158,3 +158,20 @@ Leer los mensajes que se despliegan en el programa y seleccionar las opciones de
 Procura agregar más de 5 tareas, al menos una que sea para el día actual y otra para mañana.
 De igual manera el programa crea el archivo "tareas.txt" en la carpeta en la que se encuentre el código, por lo que se sugiere no cambies de ubicación el archivo, ya que el programa creara otro y se perderán las tareas que generaste.
 
+## Referencias
+
+El código incorpora las bibliotecas **datetime** y **os**.
+
+La biblioteca **datetime** funciona para obtener la fecha del día de hoy, lo que yo hago es obtener el día, el mes y el año actual, los almaceno en una variable y hago comparaciones con las variables ingresadas por el usuario para que a través de condicionales poder determinar que tareas son para hoy, mañana o tareas pasadas.
+Es una biblioteca estándar y me apoye de estos recursos para poder implementarlo en el proyecto:
+
+- W3Schools. (2022). Python Datetime. Refsnes Data. Recuperado 20 de octubre de 2022 de, https://www.w3schools.com/python/python_datetime.asp
+- Python Software Foundation. (2022) datetime — Basic date and time types. Python Software Foundation. Recuperado 20 de octubre de 2022 de, https://docs.python.org/3/library/datetime.html
+
+
+Por otra parte la biblioteca **os**, sirve para poder manipular rutas de los archivos en el sistema, este API lo utilizo para validar que el archivo de tareas.txt existe en la carpeta donde se encuentra el programa y si no crear un archivo en blanco y que no truene el programa al momento de seleccionar la opción 6.
+Me apoye de la siguiente documentación para poder implementarlo:
+
+- W3Schools. (2022). File Handling. Refsnes Data. Recuperado 20 de octubre de 2022 de, https://www.w3schools.com/python/python_file_handling.asp
+- Python Software Foundation. (2022) os — Interfaces misceláneas del sistema operativo. Python Software Foundation. Recuperado 20 de octubre de 2022 de,  
+https://docs.python.org/es/3.10/library/os.html
