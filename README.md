@@ -151,7 +151,7 @@ Descargar el archivo y correr en terminal con:
 o abrir en Thonny y dar boton de play.
 
 
-Leer los mensajes que se despliegan en el programa y seleccionar las opciones del menú e ingresar los datos de tus tareas, no puedas acceder a todas las funcionalidades si antes no ingresas tus tareas, el programa tiene instrucciones y usa biblioteca date de dateime y os.
+Leer los mensajes que se despliegan en el programa y seleccionar las opciones del menú e ingresar los datos de tus tareas, no puedas acceder a todas las funcionalidades si antes no ingresas tus tareas, el programa tiene instrucciones, usa bibliotecas date de dateime y os.
 
 **Recomendaciones para un funcionamiento optimo:**
 
