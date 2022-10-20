@@ -1,15 +1,26 @@
 # *App de recordatorios*
-
-####                                                                                                                                         **Nombre:** Emanuel Vega
-####                                                                                                                                             **ID:** A01710366
+#### *TC1028.405*
+#### **Nombre:** Emanuel Vega
+#### **ID:** A01710366
 
 ## Contexto
 
 Recientemente muchos de nosotros hemos empezado una nueva etapa en nuestras vidas al entrar a primer semestre de la vida universitaria, por lo que como alumnos necesitamos de herramientas que nos puedan hacer más placentera esta experiencia así como facilitarnos la vida durante nuestra carrera profesional, por lo que tener una herramienta la cual nos pueda ayudar gestionar nuestros tiempos es algo de gran utilidad, al poder tener un control de las actividades que tenemos que realizar para no pasar por alto ninguna y tener un excelente desempeño académico.
 
-La manera en que funciona el algoritmo que ideé, es la siguiente; el usuario entra a la aplicación y de entrada además de la bienvenida tendrá un menú principal con dos opciones, ver las tareas pendientes o agregar una tarea, al seleccionar agregar tarea el programa le pedirá al usuario que ingrese una serie de parámetros para poder almacenar las tarea, datos tales como lo son la materia, una breve descripción de la actividad y la fecha. Posteriormente podrá visualizar las tareas que tiene con la opción de ver todas las tareas, las tareas del día o las tareas previas. Con la opción de después de ver las tareas añadir otra.
+La manera en que funciona el algoritmo que ideé, es la siguiente; el programa cuenta con un menú de 6 opciones que puede navegar entre ellas ya que se implementó un ciclo while, antes de entrar al menú hay una función para validar que se ingrese una opción válida y no salga por default en la primera iteración, después de entrar al menú se le pedirá que ingrese numéricamente la opción que desea, siendo del 1 al 6 las opciones validas, si ingresa un numero entero diferente el programa terminara y desplegara un mensaje de despedida.
 
-La lógica del algoritmo es dividiendo las funciones por subprocesos para después invocarlos, de igual manera para las opciones hacia el usuario se ocupan condicionales y para el almacenamiento de tareas con sus respectivas características se hace uso de listas, para almacenar todas las tareas es una lista de la lista con las tareas y sus parámetros.
+**Opción 1:** Esta opción es para agregar tareas a la aplicación, el programa le pide al usuario mediante inputs que ingrese la materia y una descripción de su tarea, así como el día, mes y año, implementando una función para validar que los datos ingresados sean reales para que se puedan comparar con la librería en otras opciones del menú. Estas variables se almacenan en una lista, y esa lista se guarda en otra lista que contiene todas las tareas. Adicional cada tarea que se genera se escribe en un archivo para que no se quede solo en la RAM y se pueda almacenar los datos una vez que el programa termina.
+
+**Opción 2:** Muestra todas las tareas que se agreguen durante la ejecución del programa.
+
+**Opción 3:** Buscara dentro de la lista de listas de tareas, las tareas que la fecha coincidan con la fecha actual haciendo uso de la biblioteca datetime. Únicamente con las tareas que se agreguen durante la ejecución del programa.
+
+**Opción 4:** De igual manera hace una búsqueda con un ciclo for dentro de la lista de listas de tareas (declarada como mat) y muestra las tareas pasadas. Únicamente con las tareas que se agreguen durante la ejecución del programa.
+
+**Opción 5:** En esta opción del menú de la misma forma se hace una búsqueda, pero, solo despliega las tareas que se entregan mañana. Únicamente con las tareas que se agreguen durante la ejecución del programa.
+
+**Opción 6:** Aquí se puede ver el historial del programa y observar todas las tareas que se han añadido durante todas las ejecuciones del programa, a través de leer e imprimir el archivo de tareas.txt.
+
 
 
 
