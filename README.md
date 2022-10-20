@@ -52,7 +52,7 @@ La manera en que funciona el algoritmo que ideé, es la siguiente; el programa c
 
         mientras seleccion > 0 y seleccion < 7:
 
-        Repetir:
+        repetir:
 
             si seleccion == (1):
                 input str <- materia
